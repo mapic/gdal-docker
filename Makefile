@@ -101,6 +101,7 @@ $(GDAL_CONFIG): /tmp/gdal $(MONGO_DEV) $(OPENJPEG_DEV) $(FILEGDBAPI_DEV) $(LIBEC
 	&& ldconfig
 
 /tmp/gdal: $(SVN) $(BUILD_ESSENTIAL)
+	export LC_CTYPE=en_US.UTF-8
 	$(SVN) checkout --quiet "http://svn.osgeo.org/gdal/$(GDAL_VERSION)/" /tmp/gdal/ \
 	&& touch -c /tmp/gdal
 
